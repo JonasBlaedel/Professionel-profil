@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: centrano2;
+  src: url(../fonts/CentraNo2-Medium.ttf);
+}
+
+@font-face {
+  font-family: centrano2-bold;
+  src: url(../fonts/CentraNo2-Bold.ttf);
+}
+
+@font-face {
+  font-family: centrano2-light;
+  src: url(../fonts/CentraNo2-Light.ttf);
+}
+
+h2 {
+  font-size: clamp(1rem, 0.8545rem + 0.5818vw, 1.4rem);
+  font-family: centrano2;
+}
+
+p,
+a,
+ul,
+li {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+}
+
+section.navigation a {
+  color: black;
+}
+
+section.navigation li {
+  margin: 20px;
+  list-style: none;
+}
+
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-container .overlay {
+  opacity: 0.2;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+.mySlides {
+  height: 500px;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: #589df6;
+}
+
+#dku {
+  text-align: center;
+  margin: 60px 0 0 0;
+  font-family: rubik;
+  font-weight: 300;
+  color: #589df6;
+}
+
+.projekter {
+  padding: 2rem 15vw;
+  margin: 3rem 0;
+  background-color: aliceblue;
+}
+.accordions {
+  display: flex;
+  flex-direction: column;
+}
+button.accordion {
+  border: none;
+  padding: 2rem 2rem 1.5rem 2rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: transparent;
+  color: black;
+}
+.accordions:last-child {
+  border-bottom: none;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+
+.panel p {
+  font-family: centrano2-light;
+  font-size: clamp(0.7rem, 0.6273rem + 0.2909vw, 0.9rem);
+}
+.panel p:last-child {
+  padding-bottom: 3.5rem;
+}
+.panel a {
+  font-family: centrano2;
+  font-size: clamp(0.7rem, 0.6273rem + 0.2909vw, 0.9rem);
+  padding: 0.5rem 1rem;
+  background-color: #3672c2;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  transition: 250ms;
+}
+.panel a:hover {
+  padding: 0.5rem 1.2rem;
+  background-color: #5293e8;
+  color: white;
+}
+
+.activePanel {
+  padding: 0rem 2rem 0rem 2rem;
+  animation: panelAnimate 1.5s ease-in-out; /* Add animation */
+  max-height: 500px; /* Set a maximum height for the open panel, adjust as needed */
+}
+
+@keyframes panelAnimate {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 500px; /* Adjust the final max-height to match the value in .activePanel */
+  }
+}
+
+.hero-heading h1 {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #589df6;
+  text-transform: uppercase;
+  font-size: 5rem;
+  text-align: center;
+  font-family: centrano2;
+}
+
+.herotext {
+  margin: 8rem 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-index {
+  position: relative;
+  height: 600px;
+  margin: 0 15vw;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.icon {
+  font-family: centrano2;
+  font-size: 0.7rem;
+  border: 1px solid white;
+  padding: 0.4rem;
+  border-radius: 15px;
+  min-width: 60px;
+  text-align: center;
+  background-color: #589df6;
+  color: white;
+  font-family: centrano2;
+}
+
+span.arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+}
+
+/* Style the header with sticky positioning */
+body header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  margin: 0 0 20px;
+  z-index: 5;
+  box-shadow: 1px 1px 10px #589df6;
+  backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+  background: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity */
+}
+html body header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+section.navigation ul {
+  display: flex;
+}
+section nav ul {
+  padding-left: 10vw;
+  margin: 5px;
+}
+
+span.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  pointer-events: none;
+  position: relative;
+}
+
+span.btnTitle {
+  font-size: clamp(1rem, 0.8545rem + 0.5818vw, 1.4rem);
+  color: black;
+  font-family: centrano2;
+}
+
+span.btnSubTitle {
+  font-size: clamp(0.7rem, 0.6273rem + 0.2909vw, 0.9rem);
+  color: black;
+  opacity: 0.8;
+  font-family: centrano2;
+}
+
+span.plus {
+  font-size: clamp(1.2rem, 0.9091rem + 1.1636vw, 2rem);
+  position: absolute;
+  top: 45%;
+  right: 3%;
+  color: #5293e8;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+.accordion.open .plus {
+  transform: rotate(45deg); /* Keep the plus sign rotated when the accordion is open */
+  transition: transform 1s ease; /* Add a transition for a smooth effect */
+}
+
+div.work-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+span.work {
+  font-family: centrano2-bold;
+  font-size: clamp(2rem, 1.2727rem + 2.9091vw, 4rem);
+  color: #589df6;
+}
+
+span.quote {
+  font-size: clamp(1.2rem, 0.9189rem + 1.1532vw, 2rem);
+  font-family: centrano2-light;
+  font-style: italic;
+}
+
+.about p {
+  font-size: clamp(1rem, 0.9091rem + 0.3636vw, 1.25rem);
+  line-height: 25px;
+  font-family: centrano2-light;
+  padding-bottom: 1rem;
+}
+
+div.about {
+  display: grid;
+  margin: 15vw;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about img {
+  max-width: 100%;
+}
+
+a.contact {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: centrano2;
+  font-size: clamp(0.7rem, 0.6273rem + 0.2909vw, 0.9rem);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 15px;
+  background-color: #589df6;
+  color: white !important;
+}
+a.contact:hover {
+  background-color: #5293e8;
+  color: white;
+}
+
+#home {
+  font-family: rubik;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 0.8295rem + 0.1818vw, 1rem);
+  color: #589df6;
+  position: absolute;
+  top: 25vh;
+  left: -2vh;
+  transform: rotate(270deg);
+}
+
+#scrolltop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 60px;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: #589df6;
+  padding: 0px 10px 20px 10px;
+  cursor: pointer;
+}
+
+#scrolltop:hover {
+  background-color: #589df6;
+  color: white;
+  border-radius: 25px;
+}
+
+@media (max-width: 650px) {
+  html body header {
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+  }
+  #home {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  li a {
+    font-size: clamp(0.875rem, 0.7841rem + 0.3636vw, 1.125rem);
+  }
+  section nav ul {
+    display: flex;
+    padding-left: 0;
+  }
+
+  .container-index {
+    margin: 0 8vw;
+    position: relative;
+    height: 27rem;
+  }
+  .hero-heading h1 {
+    top: 74%;
+    font-size: 2.5rem;
+  }
+  .mySlides {
+    height: 400px;
+  }
+
+  .herotext {
+    margin: 2rem 8vw;
+    text-align: center;
+  }
+  .projekter {
+    padding: 2rem 8vw;
+  }
+
+  button.accordion {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .activePanel {
+    padding: 0rem 0.5rem 0rem 0.5rem;
+  }
+  .icon {
+    font-size: 0.5rem;
+    padding: 0.3rem;
+    min-width: 40px;
+  }
+  div.about {
+    display: grid;
+    margin: 8vw;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  #home {
+    display: none;
+  }
+}
